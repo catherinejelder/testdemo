@@ -1,0 +1,27 @@
+package example
+
+import org.junit.runner.RunWith
+import org.scalatest.junit.JUnitRunner
+import org.scalatest.FunSuite
+
+import math.FunMath
+import math.FunMath._
+
+class FunMathSuite3 extends FunSuite {
+  val multiplesOfThree = List(-17077161, 0, 3, 6442449)
+  val nonMultiplesOfThree = List(Int.MinValue, 1, 2, Int.MaxValue)
+  
+  // passing numbers
+  test("multiples of three should pass") {
+    for (num <- multiplesOfThree) {
+      assert(FunMath.divisibleByThree(num) == true, num + " did not pass")   
+    }
+  }
+  
+  // failing numbers
+  test("non multiples of three should fail") {
+    for (num <- nonMultiplesOfThree) {
+      assert(FunMath.divisibleByThree(num) == false, num + " did not fail")   
+    }
+  }
+}

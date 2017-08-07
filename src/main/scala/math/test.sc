@@ -13,5 +13,7 @@ object test {
   divisibleByThree(39)                            //> res4: Boolean = true
   divisibleByThree(400)                           //> res5: Boolean = false
   divisibleByThree(0)                             //> res6: Boolean = false
-  divisibleByThree(-300)                          //> res7: Boolean = true
+  divisibleByThree(-300)
+  divisibleByThree(432)//> res7: Boolean = true
+  divisibleByThree(4)
 }

@@ -1,11 +1,7 @@
 package example
 
-import org.junit.runner.RunWith
-import org.scalatest.junit.JUnitRunner
 import org.scalatest.FunSuite
-
 import math.FunMath
-import math.FunMath._
 
 class FunMathSuite1 extends FunSuite {
   test("1 should fail") {

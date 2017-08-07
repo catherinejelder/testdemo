@@ -1,11 +1,7 @@
 package example
 
-import org.junit.runner.RunWith
-import org.scalatest.junit.JUnitRunner
 import org.scalatest.FunSuite
-
 import math.FunMath
-import math.FunMath._
 
 class FunMathSuite4 extends FunSuite {
   val multiplesOfThree = -17077161 :: 6442449 :: (-102 to 100 by 3).toList  

@@ -12,21 +12,31 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <scala.version>2.11.8</scala.version>
-        <scala.version.major>2.11</scala.version.major>
-        <scalatest.version>2.2.4</scalatest.version>
     </properties>
+
+    <repositories>
+        <repository>
+            <id>artima</id>
+            <name>Artima Maven Repository</name>
+            <url>http://repo.artima.com/releases</url>
+        </repository>
+    </repositories>
 
     <dependencies>
         <dependency>
             <groupId>org.scala-lang</groupId>
             <artifactId>scala-library</artifactId>
-            <version>${scala.version}</version>
+            <version>2.11.8</version>
+        </dependency>
+        <dependency>
+            <groupId>org.scalactic</groupId>
+            <artifactId>scalactic_2.11</artifactId>
+            <version>2.2.6</version>
         </dependency>
         <dependency>
             <groupId>org.scalatest</groupId>
-            <artifactId>scalatest_${scala.version.major}</artifactId>
-            <version>${scalatest.version}</version>
+            <artifactId>scalatest_2.11</artifactId>
+            <version>2.2.6</version>
             <scope>test</scope>
         </dependency>
         <dependency>
@@ -81,16 +91,21 @@
                     </execution>
                 </executions>
             </plugin>
-            <!--  
             <plugin>
-			    <groupId>org.codehaus.mojo</groupId>
-			    <artifactId>exec-maven-plugin</artifactId>
-			    <version>1.1</version>
-			    <configuration>
-			      <mainClass>main.scala.game.Main</mainClass>
-			    </configuration>
-  			</plugin>
-  			-->
+                <groupId>net.alchim31.maven</groupId>
+                <artifactId>scala-maven-plugin</artifactId>
+                <configuration>
+                    <compilerPlugins>
+                        <compilerPlugin>
+                            <groupId>com.artima.supersafe</groupId>
+                            <artifactId>supersafe_2.11.8</artifactId>
+                            <version>1.1.2</version>
+                        </compilerPlugin>
+                    </compilerPlugins>
+                </configuration>
+                <executions>
+                </executions>
+            </plugin>
         </plugins>
     </build>
 </project>

@@ -15,5 +15,5 @@ object FunMath {
   }
   
   private def sumOfDigits(x: Int): Int = 
-    Math.abs(x).toString.toList.map(c => c.asDigit).foldLeft(0)(_ + _)
+    Math.abs(x).toString.toList.map(_.asDigit).sum
 }

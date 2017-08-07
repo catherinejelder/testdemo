@@ -7,8 +7,8 @@ object test {
   val x = -1243458349                             //> x  : Int = -1243458349
   Math.abs(x)                                     //> res0: Int = 1243458349
   x.toString()                                    //> res1: String = -1243458349
-  x.toString.toList.map(c => c.asDigit)           //> res2: List[Int] = List(-1, 1, 2, 4, 3, 4, 5, 8, 3, 4, 9)
-  x.toString.toList.map(c => c.asDigit).foldLeft(0)(_ + _)
+  x.toString.toList           //> res2: List[Int] = List(-1, 1, 2, 4, 3, 4, 5, 8, 3, 4, 9)
+  x.toString.toList.map(_.asDigit).sum
                                                   //> res3: Int = 42
   divisibleByThree(39)                            //> res4: Boolean = true
   divisibleByThree(400)                           //> res5: Boolean = false
